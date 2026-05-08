@@ -1,0 +1,20 @@
+{
+    "name": "Todo App",
+    "short_name": "TDAP",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#f4f6fb",
+    "theme_color": "#5b6af0",
+    "icons": [
+        {
+            "src": "assets/list_10700773.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/list_10700773.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

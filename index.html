@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+     <link rel="icon" href="assets/list_10700773.png" type="image/png">
+     <link rel="manifest" href="manifest.json">
+    <link 
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <main class="app" aria-label="Todo Application">
+      <header>
+        <button class="mode togglemode toggle" title="Toggle Dark/Light Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <h1>To-Do List</h1>
+        <div class="theme-selector">
+            <div class="theme-btn active" style="background: #4169E1;" data-theme="blue" title="Blue"></div>
+            <div class="theme-btn" style="background: #FF7F50;" data-theme="orange" title="Orange"></div>
+            <div class="theme-btn" style="background: #20B2AA;" data-theme="teal" title="Teal"></div>
+            <div class="theme-btn" style="background: #9370DB;" data-theme="purple" title="Purple"></div>
+            <div class="theme-btn" style="background: #FF6347;" data-theme="red" title="Red"></div>
+        </div>
+        <div class="date-time-display">
+          <p id="date-display" aria-live="polite"></p>
+          <p id="time-display" aria-live="polite"></p>
+        </div>
+      </header>
+
+      <div class="todo-input">
+        <label for="task-input" class="sr-only">Add a new task</label>
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Post a new task..."
+          autocomplete="off"
+          aria-label="New task description"
+        />
+        <div class="datetime-inputs">
+            <input type="date" id="date-input" placeholder="Select date" aria-label="Task date">
+            <input type="time" id="time-input" placeholder="Select time" aria-label="Task time">
+        </div>
+        <button id="add-task" aria-label="Add task">
+          <i class="fas fa-plus" aria-hidden="true"></i> Add
+        </button>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search tasks..." aria-label="Search tasks">
+        <i class="fas fa-search"></i>
+      </div>
+
+      <!-- Statistics Dashboard -->
+      <div class="stats-dashboard">
+        <div class="stat-item">
+          <span class="stat-label">Total</span>
+          <span class="stat-value" id="stat-total">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Completed</span>
+          <span class="stat-value" id="stat-completed">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Progress</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Selector -->
+      <div class="category-selector">
+        <input type="text" id="new-category" placeholder="Add category..." aria-label="New category">
+        <button id="add-category-btn" title="Add category"><i class="fas fa-plus"></i></button>
+        <div id="categories-list" class="categories-list"></div>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="Filter tasks">
+        <button
+          class="filter active"
+          data-filter="all"
+          role="tab"
+          aria-selected="true"
+        >
+          All
+        </button>
+        <button
+          class="filter"
+          data-filter="active"
+          role="tab"
+          aria-selected="false"
+        >
+          Active
+        </button>
+        <button
+          class="filter"
+          data-filter="completed"
+          role="tab"
+          aria-selected="false"
+        >
+          Completed
+        </button>
+      </div>
+
+      <div class="todos-container">
+        <ul id="todos-list" aria-label="Task list" role="list"></ul>
+        <div class="empty-state" id="empty-state" aria-live="polite">
+          <i class="fas fa-check-double" aria-hidden="true"></i>
+          <h3>No tasks yet!</h3>
+          <p>Add your first task to get started</p>
+        </div>
+      </div>
+      <div class="priority-selector-container">
+            <div class="priority-selector">
+                <span class="priority-label">Priority:</span>
+                <div class="priority-options">
+                    <div class="priority-option" data-priority="low"></div>
+                    <div class="priority-option" data-priority="medium"></div>
+                    <div class="priority-option" data-priority="high"></div>
+                </div>
+                <div class="priority slider" id="priority-slider"></div>
+                
+            </div>
+        </div>
+
+
+      <footer>
+        <p id="items-left" aria-live="polite">0 items left</p>
+        <div class="footer-buttons">
+          <button id="export-btn" title="Export tasks" aria-label="Export tasks">
+            <i class="fas fa-download"></i> Export
+          </button>
+          <button id="import-btn" title="Import tasks" aria-label="Import tasks">
+            <i class="fas fa-upload"></i> Import
+          </button>
+          <input type="file" id="import-file" accept=".json" style="display: none;">
+          <button id="clear-completed" aria-label="Clear completed tasks">
+            Clear completed
+          </button>
+        </div>
+      </footer>
+    </main>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2530306196862272"
+     crossorigin="anonymous"></script>
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2530306196862272"
+     crossorigin="anonymous"></script>
+<!-- todo-list -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2530306196862272"
+     data-ad-slot="9966914887"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- 100% privacy-first analytics -->
+<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
