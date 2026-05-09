@@ -168,5 +168,7 @@ Pour toute question ou suggestion, contactez l'auteur du projet.
 
 <img width="1005" height="689" alt="Capture d’écran du 2026-05-09 21-51-18" src="https://github.com/user-attachments/assets/2f83445f-a79d-4047-ba13-5483b282a09b" />
 
+<img width="947" height="678" alt="Capture d’écran du 2026-05-09 21-08-05" src="https://github.com/user-attachments/assets/5b098ea6-b8a3-4bbd-ac61-2af282ba438f" />
+
 
 
