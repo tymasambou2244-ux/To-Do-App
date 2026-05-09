@@ -165,3 +165,8 @@ Pour toute question ou suggestion, contactez l'auteur du projet.
 
 **Version:** 1.0.0  
 **Dernière mise à jour:** Mai 2026
+
+<img width="1005" height="689" alt="Capture d’écran du 2026-05-09 21-51-18" src="https://github.com/user-attachments/assets/2f83445f-a79d-4047-ba13-5483b282a09b" />
+
+
+
